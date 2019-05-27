@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Autosuggest should render initial layout 1`] = `
+Array [
+  <input
+    onChange={[Function]}
+    type="text"
+  />,
+]
+`;
