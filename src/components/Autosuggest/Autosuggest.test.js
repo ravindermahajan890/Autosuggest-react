@@ -3,13 +3,16 @@ import { shallow } from 'enzyme';
 import Autosuggest from './Autosuggest';
 
 describe("Autosuggest", () => {
+    
     it("should render autosuggest component", () => {
         const wrapper = shallow(<Autosuggest />)
     });
+        
     it("should render initial layout", () => {
         const autosuggest = shallow(<Autosuggest/>);
         expect(autosuggest.getElements()).toMatchSnapshot();
     });
+        
     it("should simulate onchange event", () => {
         const mockPropsFn = jest.fn();
         const autosuggest = shallow(<Autosuggest onHandleChange = {mockPropsFn} selectedSuggestion='divyanshu'/>);
@@ -19,6 +22,7 @@ describe("Autosuggest", () => {
         expect(mockPropsFn).toHaveBeenCalled();
         expect(mockPropsFn).toHaveBeenCalledWith('Ekta');
     });
+    
     it("should simulate onFocus event", () => {
         const mockPropsFn = jest.fn();
         const autosuggest = shallow(<Autosuggest onFocus = {mockPropsFn}/>);
@@ -26,6 +30,7 @@ describe("Autosuggest", () => {
         input.simulate('focus', { target: { value: 'Ekta' } });
         expect(mockPropsFn).toHaveBeenCalled();
     });
+
     it("should simulate onKeyup event", () => {
         const mockPropsFn = jest.fn();
         const autosuggest = shallow(<Autosuggest onKeyDown = {mockPropsFn}/>);
